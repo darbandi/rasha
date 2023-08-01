@@ -26,7 +26,7 @@ type AppType = AppProps & {
 export default function App(props: AppType): JSX.Element {
   const {
     Component,
-    pageProps: { session, ...otherProps },
+    pageProps: { ...otherProps },
   } = props
   const themeMode = 'dark'
   const { locale: nextLocale = 'en' } = useRouter()
