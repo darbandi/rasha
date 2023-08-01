@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { useRouter } from 'next/router'
 import { IntlProvider, createIntl, createIntlCache } from 'react-intl'
-import { SessionProvider } from 'next-auth/react'
 import { dark, light } from '@/theme/Theme.styled'
 import { GlobalStyles } from '@/theme/Global.styled'
 import en from '@/locales/en/common.json'
@@ -44,21 +43,19 @@ export default function App(props: AppType): JSX.Element {
   }, [])
 
   return (
-    <SessionProvider session={session}>
-      <IntlProvider {...intl} onError={() => null}>
-        <ThemeProvider theme={themes[themeMode as keyof typeof themes]}>
-          <GlobalStyles />
-          <Layout_comp>
-            {Component.auth ? (
-              <Auth>
-                <Component {...otherProps} />
-              </Auth>
-            ) : (
+    <IntlProvider {...intl} onError={() => null}>
+      <ThemeProvider theme={themes[themeMode as keyof typeof themes]}>
+        <GlobalStyles />
+        <Layout_comp>
+          {Component.auth ? (
+            <Auth>
               <Component {...otherProps} />
-            )}
-          </Layout_comp>
-        </ThemeProvider>
-      </IntlProvider>
-    </SessionProvider>
+            </Auth>
+          ) : (
+            <Component {...otherProps} />
+          )}
+        </Layout_comp>
+      </ThemeProvider>
+    </IntlProvider>
   )
 }
