@@ -3,22 +3,9 @@
 - NextJS 13
 - Typescript
 
-## 🔒 Authentication
-
-- Next Auth
-- JWT
-
 ## 🎨 UI
 
 - Styled Components
-
-## 🔄 State Management
-
-- Zustand
-
-## 🗃️ Database
-
-- MongoDB
 
 ## 🔐 Encryption
 
