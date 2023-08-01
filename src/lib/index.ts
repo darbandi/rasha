@@ -1,0 +1,1 @@
+export { ssrConfig } from './ssrConfig'
