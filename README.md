@@ -7,10 +7,6 @@
 
 - Styled Components
 
-## 🔐 Encryption
-
-- BCrypt
-
 ## 📐 TypeCheck And Fonmatter
 
 - Eslint
@@ -26,8 +22,6 @@
 - Release Note
 - TS Check
 - Next Connect
-- React Hook Form
-- YUP
 - Husky
 - Commit lint
 - list stage
